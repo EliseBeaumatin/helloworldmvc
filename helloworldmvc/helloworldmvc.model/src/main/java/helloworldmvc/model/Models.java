@@ -14,16 +14,14 @@ public class Models {
 
     private BufferedReader br;
 
-    Models() throws FileNotFoundException, IOException {
-        this.readFile();
-
-    }
-
-    private void readFile() throws FileNotFoundException, IOException {
+    public String readFile() throws FileNotFoundException, IOException {
         final File file = new File("C:/Users/elise/Desktop/wh.txt");
         this.br = new BufferedReader(new FileReader(file));
         final String message = this.br.readLine();
         this.HelloWorldMessage = message;
+
+        this.br.close();
+        return this.HelloWorldMessage;
 
     }
 
